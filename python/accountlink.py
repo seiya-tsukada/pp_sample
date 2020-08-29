@@ -21,7 +21,7 @@ def accountLink(client):
     "redirectType": "WEB_LINK",
     "redirectUrl": "https://www.paypay-corp.co.jp",
     "referenceId": "12345678",
-    "phoneNumber": "080-7357-5375"
+    "phoneNumber": ""
   }
 
   client.Account.create_qr_session(payload)

@@ -13,7 +13,7 @@ def payment(client):
 
   request = {
     "merchantPaymentId": "tsuk-pay-{}".format(current_time),
-    "userAuthorizationId": "0a98d27a-f1b3-42c8-b03a-62b61af91d5a",
+    "userAuthorizationId": "",
     "orderDescription":"tsuk shop",
     "amount": {
       "amount": 1000,
@@ -30,9 +30,9 @@ def payment(client):
 
 if __name__ == "__main__":
 
-  API_KEY = "m_HF1GR6qFFQ_r3Mj"
-  API_SECRET = "9Oc1dHRcuhQb7IOjDa1ssvc8hVXUXJtF/6KtcJHZ"
-  MERCHANT_ID = "238319566440579072"
+  API_KEY = ""
+  API_SECRET = ""
+  MERCHANT_ID = ""
 
   #Set True for Production Environment. By Default this is set False for Sandbox Environment.
   client = paypayopa.Client(auth=(API_KEY, API_SECRET), production_mode=False)
