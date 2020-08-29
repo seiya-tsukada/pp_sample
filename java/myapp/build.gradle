@@ -1,0 +1,13 @@
+apply plugin: 'maven'
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'com.myapp.App'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile "jp.ne.paypay:paypayopa:0.3.0"
+}
