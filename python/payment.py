@@ -3,9 +3,10 @@
 
 import pprint
 import datetime
+import sys
 import paypayopa
 
-def payment(client):
+def payment(client, uaid):
 
   now = datetime.datetime.now()
   current_time =  now.strftime('%Y%m%d%H%M%S')
@@ -13,10 +14,10 @@ def payment(client):
 
   request = {
     "merchantPaymentId": "tsuk-pay-{}".format(current_time),
-    "userAuthorizationId": "",
+    "userAuthorizationId": uaid,
     "orderDescription":"tsuk shop",
     "amount": {
-      "amount": 1000,
+      "amount": 100,
       "currency": "JPY"
     }
   }
@@ -38,4 +39,7 @@ if __name__ == "__main__":
   client = paypayopa.Client(auth=(API_KEY, API_SECRET), production_mode=False)
   client.set_assume_merchant(MERCHANT_ID)
 
-  payment(client)
+  args = sys.argv
+  uaid = args[1]
+
+  payment(client, uaid)

@@ -24,13 +24,17 @@ def accountLink(client):
     "phoneNumber": ""
   }
 
-  client.Account.create_qr_session(payload)
+  session = client.Account.create_qr_session(payload)
+
+  pprint.pprint(session)
+
 
 if __name__ == "__main__":
 
   API_KEY = ""
   API_SECRET = ""
   MERCHANT_ID = ""
+
 
   #Set True for Production Environment. By Default this is set False for Sandbox Environment.
   client = paypayopa.Client(auth=(API_KEY, API_SECRET), production_mode=False)
